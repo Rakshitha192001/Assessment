@@ -1,25 +1,26 @@
-
+import logo from './logo.svg';
 import './App.css';
-import Dashboard1 from './Components/Dasboard1';
-import Dashboard from './Components/Dashboard';
-import Home from './Components/Home';
-import { Route,Routes } from 'react-router-dom';
+import LoginPage from './Components/Loginpage';
+import { Provider } from 'react-redux';
+import store from './Redux/Store';
+import { Route, Routes } from 'react-router-dom';
+import HomePage from './Components/Homepage';
+import Cart from './Components/Cart';
+
 
 function App() {
   return (
-
-    <>
-       {/* <Home />   */}
-     <Routes> 
-      <Route path='/' element={<Home />}  />
-       <Route path='/dashboard' element={<Dashboard />} />
-         
-    </Routes>  
-     {/* <Dashboard />  */}
-      {/* <Dashboard1 />  */}
-
+    <Provider store={store}>
+    <div className="App">
+      
+    <Routes>
+     <Route path='/' element={<LoginPage />} />
+     <Route path='/homePage' element={<HomePage />} />
+     <Route path='/cart' element={<Cart />} />
+    </Routes>
+    </div>
     
-    </>
+    </Provider>
   );
 }
 
